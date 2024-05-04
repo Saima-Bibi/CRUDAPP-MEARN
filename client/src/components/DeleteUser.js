@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DeleteUser() {
+export default function DeleteUser({handleDelete}) {
   return (
     <>
        <div id="deleteEmployeeModal" className="modal fade">
@@ -17,7 +17,7 @@ export default function DeleteUser() {
                             </div>
                             <div className="modal-footer">
                                 <input type="button" className="btn btn-default" data-bs-dismiss="modal" value="Cancel" />
-                                <input type="button" className="btn btn-danger" value="Delete" data-bs-dismiss="modal" />
+                                <input type="button" className="btn btn-danger" value="Delete" data-bs-dismiss="modal"  onClick={handleDelete}/>
                             </div>
                         </form>
                     </div>

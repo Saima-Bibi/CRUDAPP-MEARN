@@ -40,7 +40,7 @@ const updateUser = async(req,res)=>{
         if(!updatedUser){
             res.status(404).json({success: false,message: "user not found", updatedUser});
         }
-        res.status(200).json({success:true, message: ' updated user successfully', updatedUser});
+        res.status(200).json({success:true, message: 'user updated  successfully', updatedUser});
     } 
     catch (error) {
         console.log(error);

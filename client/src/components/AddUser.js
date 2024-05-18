@@ -6,7 +6,7 @@ export default function AddUser() {
 
     const[value, setValue] = useState({
        name:'',
-       pasword:'',
+       password:'',
        email:'',
        phone: ''
     }

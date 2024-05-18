@@ -3,9 +3,11 @@ import Table from './Table'
 import AddUser from './AddUser'
 import UpdateUser from './UpdateUser'
 import DeleteUser from './DeleteUser'
-import { useState } from 'react'
+import { useState} from 'react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+
+
 
 export default function MainTable() {
   const [deletedUserId,setDeletedUserId] = useState()
@@ -13,7 +15,7 @@ export default function MainTable() {
    // console.log(updatedUserId)
   const[value, setValue] = useState({
     name:'',
-    pasword:'',
+    password:'',
     email:'',
     phone: ''
  }
@@ -29,16 +31,29 @@ const handleChange =(e)=>{
   )
 }
 
-const UpadteUserData = (Updatedid) => {
-
+const UpadteUserData =async (Updatedid) => {
+  const res = await axios.get(`http://localhost:4000/api/read/${Updatedid}`);
+  console.log(res);
+  setValue({
+    name: res.data.name,
+    password: res.data.password,
+    email: res.data.email,
+    phone:res.data.phone,
+  });
   setUpdatedUserId(Updatedid)
-
+  
 }
 
 const DeletedUser = (Deletedid) =>{
     setDeletedUserId(Deletedid)
 
 }
+
+
+
+
+
+
 
  const handleSubmission =async(e)=>{
   e.preventDefault()

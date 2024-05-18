@@ -1,10 +1,8 @@
 import React from 'react'
 
-
 export default function UpdateUser({value, handleChange, handleSubmission}) {
 
   
-
     
 
     
@@ -27,7 +25,7 @@ export default function UpdateUser({value, handleChange, handleSubmission}) {
                                 </div>
                                 <div className="form-group">
                                     <label>Password</label>
-                                    <input type="text"  name='fathername' value={value.password} onChange={handleChange}  className="form-control" />
+                                    <input type="text"  name='password' value={value.password} onChange={handleChange}  className="form-control" />
                                 </div>
                                 <div className="form-group">
                                     <label>Email</label>

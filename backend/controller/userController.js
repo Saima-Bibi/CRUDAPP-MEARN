@@ -31,6 +31,15 @@ const getUser =async(req,res)=>{
    }
    
 };
+const getSuser = async (req, res) => {
+    try {
+      const UserId = req.params.id;
+      const user = await userModel.findById({ _id: UserId });
+      res.send(user);
+    } catch (error) {
+      res.send(error);
+    }
+  };
 const updateUser = async(req,res)=>{
     try {
         const UserId = req.params.id;
@@ -67,4 +76,4 @@ const deleteUser = async(req,res)=>{
     }
 }
 
-export {creatUser,getUser, updateUser, deleteUser};
+export {creatUser,getUser, updateUser, deleteUser, getSuser};
